@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         foregroundColor: Colors.green,
         // ???
         surfaceTintColor: Colors.white,
-        title: Text("Today's Toons", style: TextStyle(fontSize: 20)),
+        title: Text("Today's Webtoons", style: TextStyle(fontSize: 20)),
       ),
     );
   }

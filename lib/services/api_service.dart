@@ -7,14 +7,15 @@ import 'package:webtoon_app/models/webtoon_model.dart';
 // API에 요청을 보내는 클래스
 class ApiService {
   // base URL
-  final String baseUrl = "https://webtoon-crawler.nomadcoders.workers.dev";
+  static const String baseUrl =
+      "https://webtoon-crawler.nomadcoders.workers.dev";
   // endpoint ???
-  final String today = "today";
+  static const String today = "today";
 
   // 특정 코드가 완전히 다 실행될 때까지 Flutter를 기다리게 한다 -> 비동기(async) 프로그래밍
   // 이 함수 내부에서 await을 사용하기 위해서, getTodaysToons()와 {} 중간에 async 키워드를 붙여 비동기 함수로 만든다.
   // async를 사용하는 경우, void를 반환할 때는 상관이 없지만, 그 외의 자료형을 반환하는 경우에는 Future<>로 감싸줘야 오류가 나지 않는다.
-  Future<List<WebtoonModel>> getTodaysToons() async {
+  static Future<List<WebtoonModel>> getTodaysToons() async {
     // WebtoonModel을 저장하기 위한 List
     List<WebtoonModel> webtoonInstances = [];
     final url = Uri.parse("$baseUrl/$today");

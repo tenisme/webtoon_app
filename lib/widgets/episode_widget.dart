@@ -8,7 +8,7 @@ class Episode extends StatelessWidget {
 
   const Episode({super.key, required this.episode, required this.webtoonId});
 
-  Future onButtonTap() async {
+  void onButtonTap() async {
     // 방법 1 (예시)
     // final url = Uri.parse("https://google.com");
     // // launchUrl, launchUrlString은 Future을 반환하는 함수다.

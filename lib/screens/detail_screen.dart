@@ -60,7 +60,7 @@ class _DetailScreenState extends State<DetailScreen> {
     initPrefs();
   }
 
-  Future onHeartTap() async {
+  void onHeartTap() async {
     // likedToons를 가져옴.
     final likedToons = prefs.getStringList('likedToons');
     // 위에서 했던 likedToons != null 작업을 다시 한 번 해 줌.
@@ -80,6 +80,8 @@ class _DetailScreenState extends State<DetailScreen> {
         // 지금의 isLiked 값에 반대되는 값으로 변경시키기 (이럴 때 isLiked = false; 처럼 짜면 안 됨)
         isLiked = !isLiked;
       });
+    } else {
+      await prefs.setStringList('likedToons', []);
     }
   }
 
@@ -159,7 +161,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         ),
                         const SizedBox(height: 15),
                         Text(
-                          "${snapshot.data!.genre} / ${snapshot.data!.age}",
+                          "장르 : ${snapshot.data!.genre} / ${snapshot.data!.age}",
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,

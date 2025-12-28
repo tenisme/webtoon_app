@@ -1,6 +1,5 @@
-// package 주소에 http라는 별명을 붙여준다.
 import 'dart:convert';
-
+// package 주소에 http라는 별명을 붙여준다.
 import 'package:http/http.dart' as http;
 import 'package:webtoon_app/models/webtoon_detail_model.dart';
 import 'package:webtoon_app/models/webtoon_episode_model.dart';

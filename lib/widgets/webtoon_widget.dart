@@ -57,12 +57,15 @@ class Webtoon extends StatelessWidget {
       },
       child: Column(
         children: [
-          // image의 사이즈를 조절하기 위해서 Container 혹은 SizedBox 안에 집어 넣는다.
+          // Hero <- 다른 두 화면에 있는 같은 요소가 하나인 것처럼 움직이는 효과를 주기 위한 위젯.
           Hero(
             tag: id,
+            // image의 사이즈를 조절하기 위해서 Container 혹은 SizedBox 안에 집어 넣는다.
             child: Container(
               width: 210,
-              // What is this??
+              // 자식이 부모 요소를 넘어서 튀어나올 때 처리하는 방법
+              // Clip.hardEdge <- 부모 영역 바깥을 날카롭게 잘라냄
+              // 보통 부모 요소에서 borderRadius를 썼을 때 같이 사용함.
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
